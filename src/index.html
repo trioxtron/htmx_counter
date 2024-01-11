@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link href="/src/tailwind.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div class="flex flex-col items-center m-8">
+        <p id="counter" class="m-4" hx-get="/countervalue" hx-trigger="load"></p>
+        <div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" hx-post="/decrease"
+                hx-target="#counter" hx-swap="innerHTML">
+                decrease
+            </button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" hx-post="/increase"
+                hx-target="#counter" hx-swap="innerHTML">
+                increase
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
